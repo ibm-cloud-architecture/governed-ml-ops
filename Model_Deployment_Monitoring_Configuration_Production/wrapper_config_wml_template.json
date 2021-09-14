@@ -1,0 +1,22 @@
+{
+  "endpoint_info": {
+    "wml_endpoint": " "
+  },
+  "cpd_credentials": {
+    "cpd_username":" ",
+    "cpd_api_key": " "
+},
+ "function_info": {
+    "deployment_space": " ",
+    "function_name": " ",
+    "deployment_name": " "
+},
+ "openpages_info":
+ {
+   "op_api_key":" ",
+   "model_status_field": "MRG-Model:Usability Status",
+   "mrm_model_id": " "
+
+}
+
+}
