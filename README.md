@@ -61,7 +61,7 @@ We will run through the following modules in order to execute Governed ModelOps 
 <br>
 <br>
 
-The GovMlOps instruction spreadsheet provided to you contains the information for each group pertaining to their respective projects and resources.
+The following spreadsheet contains the information for each group pertaining to their respective projects and resources: [Groups-Information](./University_Course_Spreadsheet.xlsx)
  
  <br>
 
@@ -113,8 +113,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
 3.b In this sub-step, we create a joined virtualized view of the raw dataset. The Virtualized Dataset will then be added to the catalog and profiled. 
-   - Instructions are provided in the notebook: [Data Acquisition](./Data_Virtualization/Data%20Virtualization%20(Postgres%20%2B%20DB2).ipynb)
-
+   - Instructions are provided in the Data Acquisiton notebook named `Data Vistualization (Postgres + DB2)` pre-loaded in your development project. 
 <br>
 3.c In this sub-step, the relevant information about data sourcing is updated in model workflow.
 <br>
@@ -166,7 +165,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
 4.d. This step converts the Training Dataset that you added to the project to csv file which will eventually be used for Model Development. 
-   - Instructions are provided in the notebook: [Feature Transformation](./Virtualized_Data_Conversion/Virtualization%20Data%20Format%20Conversion.ipynb)
+   - Instructions are provided in the `Feature Transformation` notebook named `Virtualization Data Format Conversion` pre-loaded in your development project. 
    - This step is typically needed for some additional feature engineering during the model development phase. In this lab, we are not doing any additional feature engineering for simplicity.
 
 `Note: After Running any particular notebook, make sure to stop the kernel in order to avoid slowing down the cluster as shown in the image below. Repeat this for every notebook after running it in Cloud Pak for Data platform`
@@ -179,13 +178,13 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
    - 4.e.1 Model Development using UI based approach:
       - 4.e.1.1. Instructions for performing Model Development using UI Based approach (AutoAI) : [Model Development Using AutoAI](./Model_Development/Model_Development_AutoAI/Model_Development_AutoAI.ipynb)
-      - 4.e.1.2. This sub-step involves accessing and saving the performance metrics and details of various experiments using AutoAI (in the form of csv file): [AutoAI -API Integration](./Model_Development/Model_Development_AutoAI/WML-AutoAI-API-Integration.ipynb)
+      - 4.e.1.2. This sub-step involves accessing and saving the performance metrics and details of various experiments using AutoAI (in the form of csv file). Instructions are provided in the notebook named as `WML-AutoAI-API-Integration` pre-loaded in your development project. 
       - 4.e.1.3. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store) 
       - 4.e.1.4. Next, store the Model Experiment csv file to the catalog you created in 4.e.1.2. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
 
 
    - 4.e.2 Model Development using code based approach:
-      - 4.e.2.1. Instructions for performing Model Development using code based approach (Scikitlearn model) : [Model Development Using Scikit_learn](./Model_Development/Model_Development_Scikit-learn/Airline%20Model%20Development%20using%20Scikit-Learn.ipynb)
+      - 4.e.2.1. Instructions for performing Model Development using code based approach (Scikitlearn model) are provided in the notebook named `Airline Model Development using Scikit-Learn` provided in the development project.
       - 4.e.2.2. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store)
       - 4.e.2.3. Next, store the Model Experiment csv file to the catalog you created in 4.e.2.1. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
       
@@ -198,12 +197,12 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
    - 4.f.1. In this sub-step, you need to create the training Data Statistics JSON to the project and Publish to the Catalog. 
-      - Instructions are provided in the notebook: [Create training data Statistics JSON](./Model_Validation/Code_Based_Model_Validation/Create%20Training%20Data%20Statistics%20JSON.ipynb)
+      - Instructions are provided in the notebook named `Create training data Statistics JSON` in your development project. 
 
 
 
    - 4.f.2. In this sub-step, you need to create the default drift detection algorithm and publish to the catalog.
-      - Instructions are provided in the notebook: [Drift Detection Model Creation and Configuration](./Model_Validation/Code_Based_Model_Validation/Create%20Drift%20Detection%20Model.ipynb)
+      - Instructions are provided in the notebook named `Create Drift Detection Model` stored in your development project. 
 
 
 
@@ -253,14 +252,14 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 `Note: Developer has pushed the developed model to the catalog. Validator doesn’t have access to development project. Validator has to get the model from the catalog and push the same to the staging area. `
 
-   - 5.b.1. In this sub-step, the validator pushes the model to the validation project.
+   - 5.b.1. In this sub-step, the validator pushes the model to the validation/production project.
      - Instructions are provided in the notebook: [Pushing Model to Validation Project](./Data_Catalog_Project/Model%20from%20Catalog%20to%20Project.ipynb)
   
    - 5.b.2. In this sub-step, the validator is staging the model to UAT/Pre-prod deployment space. 
      - Instructions are provided in the notebook: [Staging the Model in UAT/Pre-prod Deployment Space](./Model_Validation/UAT_Model_Deployment.ipynb)
      
    - 5.b.3. In this sub-step, the validator smoke-tests the Model using Rest API. 
-     - Instructions are provided in the notebook: [Model Testing Using Rest API](./Model_Validation/Getting%20Prediction%20from%20Model%20using%20REST.ipynb)
+     - Instructions are provided in the notebook named `Getting Prediction from Model using REST` is pre-loaded in the validation project. 
 
    - 5.b.4. Configuring Model in OpenScale for Independent Validation:    
      - 5.b.4.1. In this sub-step, we configure the model in Watson Openscale.
@@ -317,8 +316,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 6.b. Model Deployment in Production Environment:
 
    - 6.b.1. In this sub-step, we are pushing the model in production using using CI/CD approach.
-      - Instructions are provided in the notebook:- Model Deployment from Pre-prod to Production Environment using Code-based approach: [CI/CD Pushing Model from Pre-prod to Prod](./CICD)
-     - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
+      - Instructions are provided in the notebook named `Push Model from Pre-Prod to Prod` which is pre-loaded in the validation/production project. This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
+     - Follow the instructions in the notebook : [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
 
    - 6.b.2. In this sub-step, we are pushing AutoAI model in Production using UI based Approach.
       - Instructions are provided in the notebook: [Model Deployment and Configuration for Monitoring](./Model_Deployment_Monitoring_Configuration_Production/Model%20Deployment%20%26%20Config%20for%20Monitoring.ipynb)
@@ -363,7 +362,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 7.b. Configure Models in Production Environment:
 
    - 7.b.1. In this sub-step, we create WML Model Wrapper Function in Production Environment. 
-      - Instructions are provided in the notebook: [WML Model Wrapper Function](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(WML).ipynb)
+      - Instructions are provided in the notebook : [WML Model Wrapper Function](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(WML).ipynb)
 
 
    - 7.b.2. In this sub-step, we configure model for monitoring in production. 
@@ -402,7 +401,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 `Run the notebooks below in sequence for developed Model which have been pushed to production.` 
 
-   - 8.a. [Sending Multiple Scoring Requests to Deployed Model](./Model_Monitoring_Production/1.%20Sending%20Mult.%20Scoring%20Req.%20to%20Deployment.ipynb)
+   - 8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
    
    - 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
@@ -425,17 +424,18 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 #### Model Development outside IBM Environment:
 
-  - 4.a. Model Development outside IBM environment(3rd party Environment) - [Model Development in Opensource Environment](./Model_Development/Model_Development_Heroku/Airline-model-development-scikitlearn.ipynb)
+  - 4.a. Model Development outside IBM environment(3rd party Environment) - Instructions are provided in the notebook named `Airline Model development Heroku` pre-loaded in the development project. 
      - `Note: In case you want to skip this step, the model pkl file will be provided to you through your respective catalog. Simply push the model file from the catalog to your project.`
   - 4.b. Store the model to the catalog in `Model Store` - [Publish Model to Catalog](./Model_Development/Model_Store) - This will store the respective model to the catalog.
 
 <br>
-
+      
+      
   - 4.c. Reuse the following Artifacts for Model Validation/Monitoring that were created in IBM Platform as highlighted below: 
-    - 4.c.1 [Create training data Statistics JSON](./Model_Validation/Code_Based_Model_Validation/Create%20Training%20Data%20Statistics%20JSON.ipynb)
+    - 4.c.1 Instructions are provided in the notebook named `Create training data Statistics JSON` pre-loaded in your development project. 
        
-    - 4.c.2. [Drift Detection Model Creation and Configuration](./Model_Validation/Code_Based_Model_Validation/Create%20Drift%20Detection%20Model.ipynb)
-       
+    - 4.c.2. Instructions are provided in the notebook named `Create Drift Detection Model` pre-loaded in your development project.
+    
 ---------
 
 ### Model Validation
@@ -446,17 +446,17 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ### Model Deployment
 
   #### Model Deployment using Heroku Platform:
-6. In this step, we deploy the developed model using Heroku Platform(3rd party Environment): [Model Deployment Heroku](./Model_Development/Model_Development_Heroku/Deploy%20model%20to%20Heroku.ipynb)
+6. In this step, we deploy the developed model using Heroku Platform(3rd party Environment). Instructions are provided in the notebook named `Deploy model to Heroku` pre-loaded in your validation/production project. 
   
 ---------
 
 ### Model Productionization:
 
 7. Configure Models in Production Environment:
-  - 7.a. Model Wrapper Function and Deployment in Production Environment: [Model Wrapper Function in Heroku](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(Heroku).ipynb)
+  - 7.a. Model Wrapper Function and Deployment in Production Environment.   [Model Wrapper Function in Heroku Instructions](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(Heroku).ipynb)
  
   - 7.b. In this sub-step, we configure model for monitoring in production. 
-     - Instructions are provided in the notebook: [Openscale Configuration via API](./Model_Deployment_Monitoring_Configuration_Production/Configure%20OpenScale%20via%20API%20Instructions.ipynb)
+     - Instructions are provided in the notebook named `Configure Openscale via API Instructions`pre-loaded in your validation/production project. 
 
 ---------
 
@@ -464,7 +464,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ### Model Monitoring in Production Environment:
 `Run the notebooks below in sequence for the Model which have been pushed to production.`
 
-  - 8.a. [Sending Multiple Scoring Requests to Deployed Model](./Model_Monitoring_Production/1.%20Sending%20Mult.%20Scoring%20Req.%20to%20Deployment.ipynb)
+  - 8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
    
   - 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
