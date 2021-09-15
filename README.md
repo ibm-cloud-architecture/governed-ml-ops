@@ -61,7 +61,7 @@ We will run through the following modules in order to execute Governed ModelOps 
 <br>
 <br>
 
-The following spreadsheet contains the information for each group pertaining to their respective projects and resources: [Groups-Information](./GovMLOps_Instructions-0.1.xlsx)
+The GovMlOps instruction spreadsheet provided to you contains the information for each group pertaining to their respective projects and resources.
  
  <br>
 
