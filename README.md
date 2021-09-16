@@ -103,6 +103,9 @@ The following spreadsheet contains the information for each group pertaining to 
    - Log into OpenPages as ModelDataEngineer. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
    - Review the necessary information (Model Details, Model Catalog, Details about Data Source etc.) needed for data sourcing. 
 
+
+3.b In this sub-step, we create a joined virtualized view of the raw dataset by navigating to home page URL of the Cloud Pak For Data for your group. The Virtualized Dataset will then be added to the catalog and profiled. 
+
 ```
 Note: The datasets are pre-loaded in DB2 and Postgres. 
    - Naming convention:
@@ -110,10 +113,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
      - <month>_airport_information for postgres
    - We will do some feature engineering and join the datasets using Data Virtualization in the notebook below. 
 ```
-
-
-3.b In this sub-step, we create a joined virtualized view of the raw dataset. The Virtualized Dataset will then be added to the catalog and profiled. 
-   - Instructions are provided in the Data Acquisiton notebook named `Data Vistualization (Postgres + DB2)` pre-loaded in your development project. 
+   - Instructions are provided in the notebook: [Data Acquistion](./Data_Virtualization/Data%20Virtualization%20(Postgres%20%2B%20DB2).ipynb)
+   
 <br>
 3.c In this sub-step, the relevant information about data sourcing is updated in model workflow.
 <br>
@@ -134,7 +135,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    <i> Role </i>: This step needs to be executed by `ModelOwner`.
 
    - 3.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
-   - 3.d.2. Model Owner verifies the training data quality flag and the training data set by getting the name from OpenPages and investigating the data asset in the catalog.
+   - 3.d.2. Model Owner verifies the training data quality flag and the training data set by getting the name from OpenPages and investigating the data asset in the respetive catalog by navigating to home page URL of the Cloud Pak For Data for your group.
    - 3.d.3. The Model Owner then updates the `Model Life Cycle Stage` to `Approved for Development` and clicks on Save. Then, Model owner clicks on actions on top right to `Model Development` indicating the model is Ready for development stage. This will move the model to `Approved for Development` stage.
 
 <br>
@@ -152,7 +153,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 <br>
 
-4.b. Inspect the Project to be used for Model Development.
+4.b. Inspect the Project located in Cloud Pak For Data for your group to be used for Model Development.
   - For Each Group, "Airline-MLOps-Grp-<number>" project has been created on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials. 
   - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. You should see your project there.
 
@@ -174,7 +175,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 <br>
 
-4.e. Model Development - In this sub-step, we will execute approaches for Model development using IBM Environment:
+4.e. Model Development - In this sub-step, we will execute approaches for Model development using IBM Environment on Cloud Pak For Data:
 
    - 4.e.1 Model Development using UI based approach:
       - 4.e.1.1. Instructions for performing Model Development using UI Based approach (AutoAI) : [Model Development Using AutoAI](./Model_Development/Model_Development_AutoAI/Model_Development_AutoAI.ipynb)
@@ -197,18 +198,20 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
    - 4.f.1. In this sub-step, you need to create the training Data Statistics JSON to the project and Publish to the Catalog. 
-      - Instructions are provided in the notebook named `Create training data Statistics JSON` in your development project. 
+      - Instructions are provided in the notebook named `Create training data Statistics JSON` pre-loaded in your development project. 
+      - After executing the notebook, publish the `training_stats.json` that was stored in the project, into your respective model catalog. 
 
 
 
    - 4.f.2. In this sub-step, you need to create the default drift detection algorithm and publish to the catalog.
-      - Instructions are provided in the notebook named `Create Drift Detection Model` stored in your development project. 
+      - Instructions are provided in the notebook named `Create Drift Detection Model` pre-loaded in your development project. 
+      -  After executing the notebook, publish the `TBD` that was stored in the project, into your respective model catalog. 
 
 
 
 4.g In this sub-step, the relevant information about Model Development is updated in model workflow.
-  <br>
-    <i> Role </i>: This step needs to be executed by `ModelDeveloper`
+  <br> 
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`
 
    - 4.g.1. Log into Openpages as ModelDeveloper, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
    
@@ -252,7 +255,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 `Note: Developer has pushed the developed model to the catalog. Validator doesn’t have access to development project. Validator has to get the model from the catalog and push the same to the staging area. `
 
-   - 5.b.1. In this sub-step, the validator pushes the model to the validation/production project.
+   - 5.b.1. In this sub-step, the validator pushes the model to the validation/production project by navigating back to home page URL ofthe Cloud Pak For Data for your group.
      - Instructions are provided in the notebook: [Pushing Model to Validation Project](./Data_Catalog_Project/Model%20from%20Catalog%20to%20Project.ipynb)
   
    - 5.b.2. In this sub-step, the validator is staging the model to UAT/Pre-prod deployment space. 
@@ -316,8 +319,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 6.b. Model Deployment in Production Environment:
 
    - 6.b.1. In this sub-step, we are pushing the model in production using using CI/CD approach.
-      - Instructions are provided in the notebook named `Push Model from Pre-Prod to Prod` which is pre-loaded in the validation/production project. This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
-     - Follow the instructions in the notebook : [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
+      - Instructions are provided in the notebook named `Move Model from Pre-Prod to Prod` which is pre-loaded in the validation/production project. This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
+     - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
 
    - 6.b.2. In this sub-step, we are pushing AutoAI model in Production using UI based Approach.
       - Instructions are provided in the notebook: [Model Deployment and Configuration for Monitoring](./Model_Deployment_Monitoring_Configuration_Production/Model%20Deployment%20%26%20Config%20for%20Monitoring.ipynb)
@@ -464,7 +467,10 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ### Model Monitoring in Production Environment:
 `Run the notebooks below in sequence for the Model which have been pushed to production.`
 
-  - 8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
+  - 8.a. Sending Scoring requests in Production Environment: 
+    - 8.a.1. Instructions are provided in the notebook named `Send Scoring Requests from Virtualized Data` pre-loaded in your validation/production project. 
+    
+    - 8.a.2. (Optional) Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project which is sending random scoring requests to the productionized model. 
    
   - 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
