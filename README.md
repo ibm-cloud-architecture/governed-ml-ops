@@ -69,11 +69,12 @@ The following spreadsheet contains the information for each group pertaining to 
 
 1. This module covers Governance Workflow Initiation in <i>IBM OpenPages with Watson</i>. The Workflow feature of IBM Openpages is used for Model Governance Lifecycle for Risk and Compliance.
 <br>
+  
    <i> Role </i>: This step needs to be executed by `ModelOwner`.
 
    - Instructions are provided in the notebook: [Model Governance Workflow Initiation](./Model_Governance_Candidacy/Model%20Governance%20Workflow%20Initiation.ipynb) 
    
-   - After executing the instructions, you will receive a model name in OpenPages (eg. MOD_000003). Please note the Model name for your group which will be used for rest of the lab. Also, the Model Workflow will be assigned to `ModelApprover` for Model Candidacy Validation.
+   - After executing the instructions, you would have entered a unique model name in OpenPages. Please note the Model name which will be used for rest of the lab. Also, the Model Workflow will be assigned to `ModelApprover` for Model Candidacy Validation.
 
 
 <br>
@@ -84,9 +85,10 @@ The following spreadsheet contains the information for each group pertaining to 
 
 2. This module of the workflow captures the Model details as part of Model Governance Workflow using IBM Openpages. 
 <br>
+   
    <i> Role </i>: This step needs to be executed by `ModelApprover`. 
 
-   - Log into OpenPages as ModelApprover. From the task list, select the model corresponding to the Model Number as obtained in the previous module.
+   - Log into OpenPages as ModelApprover. From the task list, select the model corresponding to the unique model name as obtained in the previous module.
    - Instructions are provided in the notebook: [Model Candidacy Validation](./Model_Governance_Candidacy/Model%20Candidacy%20Validation.ipynb)
    - After this step, the Model Workflow would be assigned to `ModelDataEngineer` for Data Acquisition.
 
@@ -98,13 +100,14 @@ The following spreadsheet contains the information for each group pertaining to 
 
 3.a This module provides the steps where a data engineer can source the data needed to develop a model. 
 <br>
+
    <i> Role </i>: This step needs to be executed by `ModelDataEngineer`. 
 
-   - Log into OpenPages as ModelDataEngineer. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as ModelDataEngineer. From the task list, select the model corresponding to the unique model name as obtained from `Model Governance Initiation` Module.
    - Review the necessary information (Model Details, Model Catalog, Details about Data Source etc.) needed for data sourcing. 
 
 
-3.b In this sub-step, we create a joined virtualized view of the raw dataset by navigating to home page URL of the Cloud Pak For Data for your group. The Virtualized Dataset will then be added to the catalog and profiled. 
+3.b In this sub-step, we create a joined virtualized view of the raw dataset by navigating back to home page URL of the Cloud Pak For Data. The Virtualized Dataset will then be added to your respective catalog and profiled. 
 
 ```
 Note: The datasets are pre-loaded in DB2 and Postgres. 
@@ -120,7 +123,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
    <i> Role </i>: This step needs to be executed by `ModelDataEngineer`
 
-   - 3.c.1. Log into Openpages as ModelDataEngineer, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 3.c.1. Log into Openpages as ModelDataEngineer, navigate to the tasks section and click on your model name obtained from Model Governance Initiation module.
 
    - 3.c.2. Click on Data Sourcing view, fill out the necessary fields (Training Data Asset Name, Training Data Quality Flag (indicating whether the training data quality is acceptable or not)). 
       - Training Data Asset Name: Provide the name of the virtualized data set that you created using Data Virtualization and added to the catalog.
@@ -132,10 +135,11 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 3.d. In this sub-step, the model owner needs to take the appropriate action in order to make the model ready for development.
 <br>
+
    <i> Role </i>: This step needs to be executed by `ModelOwner`.
 
-   - 3.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
-   - 3.d.2. Model Owner verifies the training data quality flag and the training data set by getting the name from OpenPages and investigating the data asset in the respetive catalog by navigating to home page URL of the Cloud Pak For Data for your group.
+   - 3.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
+   - 3.d.2. Model Owner verifies the training data quality flag and the training data set by getting the name from OpenPages and investigating the data asset in the respetive catalog by navigating to home page URL of Cloud Pak For Data.
    - 3.d.3. The Model Owner then updates the `Model Life Cycle Stage` to `Approved for Development` and clicks on Save. Then, Model owner clicks on actions on top right to `Model Development` indicating the model is Ready for development stage. This will move the model to `Approved for Development` stage.
 
 <br>
@@ -148,14 +152,14 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
    <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
 
-   - Log into OpenPages as ModelDeveloper. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as ModelDeveloper. From the task list, select the model corresponding to the unique model name as obtained from `Model Governance Initiation` Module.
    - Review the necessary information (Model Details, Model Catalog, Details about Data Source like Training Data and Data Quality etc.). 
 
 <br>
 
-4.b. Inspect the Project located in Cloud Pak For Data for your group to be used for Model Development.
-  - For Each Group, "Airline-MLOps-Grp-<number>" project has been created on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials. 
-  - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. You should see your project there.
+4.b. Inspect the respective Project located in Cloud Pak For Data to be used for Model Development.
+  - Each User will create a new project `Airline-MLOps-Dev-User-Name` where User-name is allocated to you (eg. Airline-MLOps-Development-Cluster1-User10). You will use this project on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials.  
+  - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. Then, click on new project, provide your project name and import the zip file given to you at the time of project creation.
 
 <br>
 
@@ -166,7 +170,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
 4.d. This step converts the Training Dataset that you added to the project to csv file which will eventually be used for Model Development. 
-   - Instructions are provided in the `Feature Transformation` notebook named `Virtualization Data Format Conversion` pre-loaded in your development project. 
+   - Instructions are provided in the `Feature Transformation` notebook named `Virtualization Data Format Conversion` pre-loaded in your development project after importing the zip file. 
    - This step is typically needed for some additional feature engineering during the model development phase. In this lab, we are not doing any additional feature engineering for simplicity.
 
 `Note: After Running any particular notebook, make sure to stop the kernel in order to avoid slowing down the cluster as shown in the image below. Repeat this for every notebook after running it in Cloud Pak for Data platform`
@@ -180,14 +184,14 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    - 4.e.1 Model Development using UI based approach:
       - 4.e.1.1. Instructions for performing Model Development using UI Based approach (AutoAI) : [Model Development Using AutoAI](./Model_Development/Model_Development_AutoAI/Model_Development_AutoAI.ipynb)
       - 4.e.1.2. This sub-step involves accessing and saving the performance metrics and details of various experiments using AutoAI (in the form of csv file). Instructions are provided in the notebook named as `WML-AutoAI-API-Integration` pre-loaded in your development project. 
-      - 4.e.1.3. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store) 
-      - 4.e.1.4. Next, store the Model Experiment csv file to the catalog you created in 4.e.1.2. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
+      - 4.e.1.3. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store/Publish%20Model%20to%20a%20Catalog.ipynb) 
+      - 4.e.1.4. Next, store the Model Experiment csv/excel file to the catalog you created in 4.e.1.2. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
 
 
    - 4.e.2 Model Development using code based approach:
       - 4.e.2.1. Instructions for performing Model Development using code based approach (Scikitlearn model) are provided in the notebook named `Airline Model Development using Scikit-Learn` provided in the development project.
       - 4.e.2.2. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store)
-      - 4.e.2.3. Next, store the Model Experiment csv file to the catalog you created in 4.e.2.1. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
+      - 4.e.2.3. Next, store the Model Experiment csv file you created using 4.e.2.1 into the catalog (similar to the step executed for AutoAI model in 4.e.1 step). On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
       
 <br>
 
@@ -203,17 +207,16 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
 
-   - 4.f.2. In this sub-step, you need to create the default drift detection algorithm and publish to the catalog.
-      - Instructions are provided in the notebook named `Create Drift Detection Model` pre-loaded in your development project. 
-      -  After executing the notebook, publish the `TBD` that was stored in the project, into your respective model catalog. 
-
+   - 4.f.2. In this sub-step, you would be provided with a drift detection model file that would be provided in the respective development project. 
+      -  Next, publish the `Drift_Model.tar.gz` file that was stored your development project, into your respective model catalog, similar to how you pushed model/training data statstics file to the catalog previously. 
 
 
 4.g In this sub-step, the relevant information about Model Development is updated in model workflow.
   <br> 
+  
    <i> Role </i>: This step needs to be executed by `ModelDeveloper`
 
-   - 4.g.1. Log into Openpages as ModelDeveloper, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 4.g.1. Log into Openpages as ModelDeveloper, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 4.g.2. Click on `Model Development` view, fill out the necessary/key fields:
       - Model Asset name: Enter the name of the Model Asset that you used to save the model in 4.e step.
@@ -227,9 +230,10 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
  
 4.h. In this sub-step, the model owner needs to take the appropriate action in order to make the model ready for validation.
   <br>
+  
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
-   - 4.h.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 4.h.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 4.h.2. Model Owner verifies the Model development details (Model Experiment File, Model Quality, Training Data Statistics File and Drift Detection Model file) by investigating the corresponding assets in the catalog.
    
@@ -246,16 +250,16 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
   <i> Role </i>: This step needs to be executed by `ModelValidator`. 
 
-   - Log into OpenPages as Model Validator. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as Model Validator. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
    
    - Review the necessary information (Model Details, Model Catalog, Model Development Details including Data Quality, Training Data Statistics File and Drift Statistics file). 
 
 
 5.b Model Validation:
 
-`Note: Developer has pushed the developed model to the catalog. Validator doesn’t have access to development project. Validator has to get the model from the catalog and push the same to the staging area. `
+`Note: Developer has pushed the developed model to the catalog. Validator doesn’t have access to development project. Validator has to get the model from the catalog and push the model to the validation/production project. `
 
-   - 5.b.1. In this sub-step, the validator pushes the model to the validation/production project by navigating back to home page URL ofthe Cloud Pak For Data for your group.
+   - 5.b.1. In this sub-step, `CREATE` a new validation/production project named `Airline_MLOps_Prod_User-name` in IBM Cloud Pak for Data by importing the zip file provided by the instructor. The validator then pushes the model to the validation/production project. 
      - Instructions are provided in the notebook: [Pushing Model to Validation Project](./Data_Catalog_Project/Model%20from%20Catalog%20to%20Project.ipynb)
   
    - 5.b.2. In this sub-step, the validator is staging the model to UAT/Pre-prod deployment space. 
@@ -280,7 +284,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
     <i> Role </i>: This step needs to be executed by `ModelValidator`.
 
-   - 5.c.1. Log into Openpages as ModelValidator, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 5.c.1. Log into Openpages as ModelValidator, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 5.c.2. Click on `Model Validation` view, fill out the necessary/key fields (Model Validation Report, Validation Dataset). 
      - Model Validation Report: Enter the name of the Validation report file that was uploaded from Openscale to Openpages.
@@ -292,7 +296,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
-   - 5.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 5.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 5.d.2. Model Owner verifies the Model validation details by reviewing the Model Validation Report file (by navigating to `Issues and Document` section in Openpages Model workflow) and Validation Dataset stored in the catalog.
    
@@ -309,7 +313,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 6.a. This module provides the steps where a Model Deployer will perform independent validation of the model.
 <br> <i> Role </i>: This step needs to be executed by `ModelDeployer`. 
 
-   - Log into OpenPages as Model Deployer. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as Model Deployer. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
    
    - Review the necessary information (Model Development Details, Model Catalog, Model Validation details). 
    
@@ -319,8 +323,9 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 6.b. Model Deployment in Production Environment:
 
    - 6.b.1. In this sub-step, we are pushing the model in production using using CI/CD approach.
-      - Instructions are provided in the notebook named `Move Model from Pre-Prod to Prod` which is pre-loaded in the validation/production project. This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
-     - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
+      - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
+      - This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
+     
 
    - 6.b.2. In this sub-step, we are pushing AutoAI model in Production using UI based Approach.
       - Instructions are provided in the notebook: [Model Deployment and Configuration for Monitoring](./Model_Deployment_Monitoring_Configuration_Production/Model%20Deployment%20%26%20Config%20for%20Monitoring.ipynb)
@@ -330,7 +335,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
     <i> Role </i>: This step needs to be executed by `ModelDeployer`
     
-   - 6.c.1. Log into Openpages as ModelDeployer, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 6.c.1. Log into Openpages as ModelDeployer, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 6.c.2. Click on `Model Deployment` view, fill out the necessary/key fields. 
       - Endpoint: Enter the Endpoint URL that you can retreieve from WML deployment.
@@ -343,7 +348,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
-   - 6.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 6.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 6.d.2. Model Owner verifies the Model Deployment details by reviewing the Model Deployment endpoint.
    
@@ -359,7 +364,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
   <i> Role </i>: This step needs to be executed by `ModelMonitor`. 
 
-   - Log into OpenPages as Model Monitor. From the task list, select the model corresponding to the Model Number as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as Model Monitor. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
    - Review the necessary information (Model Development Details, Model Catalog, Model Validation details and Model Deployment Details). 
    
 7.b. Configure Models in Production Environment:
@@ -375,7 +380,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
     <i> Role </i>: This step needs to be executed by `ModelMonitor`
 
-   - 7.c.1. Log into Openpages as Model Monitor, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 7.c.1. Log into Openpages as Model Monitor, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 7.c.2. Click on `Model Deployment` view, fill out the necessary/key fields. 
       - Wrapper Function Endpoint: Enter the Endpoint URL that you can retreieve from production deployment space.
@@ -390,7 +395,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
   <br>
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
-   - 7.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model number obtained from Model Governance Initiation module.
+   - 7.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 7.d.2. Model Owner verifies the Model Readiness details in Openpages.
    
