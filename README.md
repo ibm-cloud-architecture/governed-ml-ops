@@ -1,43 +1,34 @@
-# Governed MLOps University Course 
+# Governed ML Operationalization Lab
 
-ML Operationalization refers to operationalization of Machine Learning Models for production use and realizing business value out of those Models. 
-
-ML Operationalization covers standard ML Lifecycle (CRISP-DM) overlayed with Continuous Integration/Continuous Development paradigm. It covers Model's Candidacy Validation, Data & Package Governance, Model Development, Independent Validation of Model, Model Productionization & Monitoring and Model Decomissioning. This entire process is governed through Model Lifecycle Governance and overlayed with Continuous Integration/Continuous Development paradigm.
-
-This Course takes you through End-to-End Governed MLOperationalization for a given use case. In our course, we will be demonstrating the end to end pipeline creation using Airline Delay Dataset. This course consists of taking the student through multiple stages of the MLOps lifecycle involving:
-1. [Model Governance Workflow Initiation](#Model-Governance-Workflow-Initiation)
-2. [Model Candidacy Validation](#Model-Candidacy-Validation)
-3. [Data Acquistion](#Data-Acquisition)
-4. [Model Development](#Model-Development)
-5. [Model Validation](#Model-Validation) 
-6. [Model Deployment](#Model-Deployment)
-7. [Model Productionization](#Model-Productionization)
-8. [Model Monitoring](#Model-Monitoring)
+Governed operationalization of AI models is a framework that uses process, people, and technology that helps in ensuring the trustworthiness of AI solutions used for business. The approach uses data and AI technologies that are integrated with an open and diverse ecosystem and is rooted in principles of trustworthy AI ethics. Governed operationalization of AI models encompasses the entire lifecycle of ML Models, starting from inception to decommission. The diagram below captures the process and people aspects of the same.
 
 ![](Images/MLOpsFlowWithGovernance-0.3.png)
 
+For more detailed on Governed operationalization of AI models please refer to https://opendatascience.com/trustworthy-ai-operationalizing-ai-models-with-governance-part-1/.
+
+The Lab in this github repository takes you through End-to-End Governed ML Operationalization for a given use case in Heterogeneous platforms. In this Lab, we will be demonstrating the end to end pipeline creation using Airline Delay Dataset. The stages of the Governed ML Ops those are covered in this lab include:
+
+1. Model Governance Workflow Initiation
+2. Model Candidacy Validation
+3. Data Acquistion
+4. Model Development
+5. Model Validation
+6. Model Deployment
+7. Model Productionization and
+8. Model Monitoring
+
 ---
-
-### Lab instructions - [Click-Here! :point_left:](#Lab-Instructions)
-
----
-
-
-![](Images/Model_Governance_Workflow.png)
-
----
-
 
 ### Step by Step Lab Instructions<a class="anchor" id="Lab-Instructions">: 
   
 #### Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 #### Use Case
-Flight delay has become a very important subject for air transportation all over the world because of the associated financial losses that the aviation industry incurs. According to data from the Bureau of Transportation Statistics (BTS) of the United Stated, over 20% of US flights were delayed during 2018, which resulted in a severe economic impact equivalent to 41 billion US$.
+Flight delay has become a very important subject for air transportation all over the world because of the associated financial losses that the aviation industry incurs. According to data from the Bureau of Transportation Statistics (BTS) of the United States, over 20% of US flights were delayed during 2018, which resulted in a severe economic impact equivalent to 41 billion US$.
 
 These delays not only cause inconveniences to the airlines but also to the passengers. The result is an increase in travel time which increases the expenses associated with food and lodging and ultimately causes stress among passengers. The airlines are victims of extra costs associated to their crews, aircraft repositioning, fuel consumption while trying to reduce elapse times, and many others which together tamper their reputation and often result in a loss of demand by passengers.
 
-The reasons for these delays vary, from air congestion to weather conditions, mechanical problems, difficulties while boarding passengers, and simply the airlines inability to handle the demand given its capacity.
+The reasons for these delays vary from air congestion to weather conditions, mechanical problems, difficulties while boarding passengers, and simply the airlines inability to handle the demand given its capacity.
 In this course, we showcase the machine learning operationalization (MLOps) workflow applied to a model which predicts flight delays. 
 
 ---
@@ -54,9 +45,18 @@ In this course, we showcase the machine learning operationalization (MLOps) work
 
 <br>
 
-###  ---------- DAY 1 - DAY 3 ACTIVITIES ---------
 <br>
-We will run through the following modules in order to execute Governed ModelOps flow. Each of the notebooks contain instructions for executing the steps in the Governed MLOps pipeline. 
+### Details of Governed MLOps flow
+
+In this Lab, you will run through the following modules in order to execute Governed MlOps flow. The various phases and the steps of Goverened ModelOps flow are depicted in the diagram below.
+
+
+![](Images/Model_Governance_Workflow.png)
+
+<img align="left" width="100" height="100" src="Images/Model_Governance_Workflow.png">
+
+
+The notebooks in the various section of this ReadMe contain instructions for executing the steps in the Governed MLOps flow. 
 
 <br>
 <br>
@@ -70,10 +70,9 @@ The following spreadsheet contains the information for each group pertaining to 
 1. This module covers Governance Workflow Initiation in <i>IBM OpenPages with Watson</i>. The Workflow feature of IBM Openpages is used for Model Governance Lifecycle for Risk and Compliance.
 <br>
   
-   <i> Role </i>: This step needs to be executed by `ModelOwner`.
+   <i> Role </i>: This step needs to be executed by `ModelOwner`
 
-   - Instructions are provided in the notebook: [Model Governance Workflow Initiation](./Model_Governance_Candidacy/Model%20Governance%20Workflow%20Initiation.ipynb) 
-   
+   - Instructions are provided in the notebook: [Model Governance Workflow Initiation](./Model_Governance_Candidacy/Model%20Governance%20Workflow%20Initiation.ipynb)  
    - After executing the instructions, you would have entered a unique model name in OpenPages. Please note the Model name which will be used for rest of the lab. Also, the Model Workflow will be assigned to `ModelApprover` for Model Candidacy Validation.
 
 
@@ -104,7 +103,7 @@ The following spreadsheet contains the information for each group pertaining to 
    <i> Role </i>: This step needs to be executed by `ModelDataEngineer`. 
 
    - Log into OpenPages as ModelDataEngineer. From the task list, select the model corresponding to the unique model name as obtained from `Model Governance Initiation` Module.
-   - Review the necessary information (Model Details, Model Catalog, Details about Data Source etc.) needed for data sourcing. 
+   - Review the necessary information (Model Details, Model Catalog, Details about Data Source etc.) needed for data sourcing. This is for Reviewing or Information purposes only. No action needs to be taken in Openpages yet. 
 
 
 3.b In this sub-step, we create a joined virtualized view of the raw dataset by navigating back to home page URL of the Cloud Pak For Data. The Virtualized Dataset will then be added to your respective catalog and profiled. 
@@ -127,7 +126,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
    - 3.c.2. Click on Data Sourcing view, fill out the necessary fields (Training Data Asset Name, Training Data Quality Flag (indicating whether the training data quality is acceptable or not)). 
       - Training Data Asset Name: Provide the name of the virtualized data set that you created using Data Virtualization and added to the catalog.
-      - Training Data Quality Flag: Update the Training Data Quality flag as `acceptable` if, after data profiling you find that the data doesn't have any null values and the attributes are not skewed etc. 
+      - Training Data Quality Flag: Update the Training Data Quality flag as `true` if, after data profiling you find that the data doesn't have any null values and the attributes are not skewed etc. 
 
    - 3.c.3. Then, click on Save. Next, click on `Data Acquisition Verified` by navigating to actions on top right. This will move the model to `Data Acquisition Completed` stage.
  
@@ -148,8 +147,10 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 ### Model Development<a class="anchor" id="Model-Development">
 
-4.a. This module provides the steps where a data scientist will develop a model. 
+4.a. This module provides the steps where a data scientist will develop a model. In Model Development step, the developer or data scientist will be creating the `development` project. 
+
 <br>
+
    <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
 
    - Log into OpenPages as ModelDeveloper. From the task list, select the model corresponding to the unique model name as obtained from `Model Governance Initiation` Module.
@@ -158,8 +159,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
 
 4.b. Inspect the respective Project located in Cloud Pak For Data to be used for Model Development.
-  - Each User will create a new project `Airline-MLOps-Dev-User-Name` where User-name is allocated to you (eg. Airline-MLOps-Development-Cluster1-User10). You will use this project on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials.  
-  - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. Then, click on new project, provide your project name and import the zip file given to you at the time of project creation.
+  - Each User will create a new Development project `Airline-MLOps-Dev-User-Name` where User-name is allocated to you (eg. Airline-MLOps-Development-Cluster1-User10). You will use this project on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials.  
+  - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. Then, click on new project, provide your project name and import the `dev` zip file provided to you at the time of project creation.
 
 <br>
 
@@ -183,7 +184,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
    - 4.e.1 Model Development using UI based approach:
       - 4.e.1.1. Instructions for performing Model Development using UI Based approach (AutoAI) : [Model Development Using AutoAI](./Model_Development/Model_Development_AutoAI/Model_Development_AutoAI.ipynb)
-      - 4.e.1.2. This sub-step involves accessing and saving the performance metrics and details of various experiments using AutoAI (in the form of csv file). Instructions are provided in the notebook named as `WML-AutoAI-API-Integration` pre-loaded in your development project. 
+      - 4.e.1.2. This sub-step involves accessing and saving the performance metrics and details of various experiments using AutoAI (in the form of excel file). Instructions are provided in the notebook named as `WML-AutoAI-API-Integration` pre-loaded in your development project. 
       - 4.e.1.3. Store the model to the catalog - [Publish Model to Catalog](./Model_Development/Model_Store/Publish%20Model%20to%20a%20Catalog.ipynb) 
       - 4.e.1.4. Next, store the Model Experiment csv/excel file to the catalog you created in 4.e.1.2. On the Data Assets section, click on the 3 dots next to the file, and select publish to your respective catalog from the drop down.
 
@@ -207,7 +208,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 
 
-   - 4.f.2. In this sub-step, you would be provided with a drift detection model file that would be provided in the respective development project. 
+   - 4.f.2. In this sub-step, you would be provided with a drift detection model file that would be pre-loaded in the respective development project. 
       -  Next, publish the `Drift_Model.tar.gz` file that was stored your development project, into your respective model catalog, similar to how you pushed model/training data statstics file to the catalog previously. 
 
 
@@ -222,9 +223,9 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
       - Model Asset name: Enter the name of the Model Asset that you used to save the model in 4.e step.
       - Development System Name: Enter `IBM Platform` in the text field. For other platforms, you should provide the details appropriately.
       - Training Data Statistics File: Update the name of the Training Data Statistics File that you created in 4.f.1 step.
-      - Drift Detection Model File: Update the name of Drift Detection Model File that you created in 4.f.2 step.
-      - Model Quality: Update the overall performance metric of the model. In our case, you can use Accuracy. It can be Accuracy, Precision, F1-Score etc. as appropriate based on the use case.
-      - Model Experiment FileName: Update the name of the model experiment file that you created in 4.e. step that was pushed to the catalog
+      - Drift Detection Model File: Update the name of Drift Detection Model File that you have from 4.f.2 step stored in the catalog.
+      - Model Experiment FileName: Update the name of the model experiment file (csv/excel file) that you created in 4.e.1.2. (for AutoAI, similar step can be executed for Scikit learn model) step that was pushed to the catalog
+      - Model Quality: Update the overall performance metric of the model. In our case, you can use Accuracy. It can be Accuracy, Precision, F1-Score etc. as appropriate based on the use case. Model Quality field has to be an integer. (Go back to AutoAI and look at the accuracy result of the model in the pipeline which you saved in the project) 
       
    - 4.g.3. Then, click on Save. Next, click on `Model Development Verified` by navigating to actions on top right. This will move the model to `Model Development Completed` stage.
  
@@ -237,7 +238,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    
    - 4.h.2. Model Owner verifies the Model development details (Model Experiment File, Model Quality, Training Data Statistics File and Drift Detection Model file) by investigating the corresponding assets in the catalog.
    
-   - 4.h.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Development Completed` to `Approved for Validation` and clicks on Save. Then, Model owner clicks on actions on top right to `Model Validation` indicating the model is Ready for Validation stage. This will move the model to `Approved for Validation` stage.
+   - 4.h.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Development Completed` to `Approved for Validation` and clicks on Save. Then, Model Owner navigates to `Model Validation` view and updated the `Have you moved the model from Dev to test` to `Yes`. Then, Model owner clicks on actions on top right to `Model Validation` indicating the model is Ready for Validation stage. This will move the model to `Approved for Validation` stage.
 
 <br>
 
@@ -246,7 +247,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ### Model Validation<a class="anchor" id="Model-Validation">
 
 
-5.a. This module provides the steps where a Model Validator will perform independent validation of the model.
+5.a. This module provides the steps where a Model Validator will perform independent validation of the model. The Model Validator will have access to the Production (or Validation, used interchangeably) project, catalog and UAT/Pre-prod Deployment Space. 
+
 <br>
   <i> Role </i>: This step needs to be executed by `ModelValidator`. 
 
@@ -282,12 +284,13 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 5.c. In this sub-step, the summary information (all the detailed information is already updated in the previous step) about Model Validation is updated in model workflow.
   <br>
+  
     <i> Role </i>: This step needs to be executed by `ModelValidator`.
 
    - 5.c.1. Log into Openpages as ModelValidator, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 5.c.2. Click on `Model Validation` view, fill out the necessary/key fields (Model Validation Report, Validation Dataset). 
-     - Model Validation Report: Enter the name of the Validation report file that was uploaded from Openscale to Openpages.
+     - Model Validation Report: Enter the Validation report file that was uploaded from Openscale to Openpages. In order to get the name of the report file that was sent to Openpages, navigate to `Issues and Documents` section in OpenPages Model Workflow and copy the Validation Report filename.
      - Validation Dataset: Enter the name of the Validation dataset that was used from the catalog for validation.
    
    - 5.c.3. Then, click on Save. Next, click on `Model Validation Verified` by navigating to actions on top right. This will move the model to `Model Validation Completed` stage.
@@ -299,6 +302,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    - 5.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 5.d.2. Model Owner verifies the Model validation details by reviewing the Model Validation Report file (by navigating to `Issues and Document` section in Openpages Model workflow) and Validation Dataset stored in the catalog.
+    `Note: The Name of Model Validation report file stored in Issues and Document section in Openpages would be named different from what you saved from Openscale. Make sure you use the name fetched from Openpages.`
    
    - 5.d.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Validation Completed` to `Approved for Deployment` and clicks on Save. Then, Model owner clicks on actions on top right to `Model Deployment` indicating the model is Ready for Deployment stage. This will move the model to `Approved for Deployment` stage.
 
@@ -407,7 +411,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 ### Model Monitoring in Production Environment<a class="anchor" id="Model-Monitoring">
 
-`Run the notebooks below in sequence for developed Model which have been pushed to production.` 
+`Run the notebooks below in sequence for developed Model which have been pushed to production. 
 
    - 8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
    
@@ -424,9 +428,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ---------
 <br>
 
-### ------- DAY 4 ACTIVITIES --------
-
-### End-to-end MLOps for Model developed and deployed in Non-IBM Environment:
+### Governed Operationalization of Model developed and deployed in Non-IBM Environment:
 
 #### REPEAT STEPS 1-3 from above involving Data Sourcing and Virtualization, following the same sequence. 
 
