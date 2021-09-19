@@ -1,4 +1,4 @@
-# Governed ML Operationalization Lab
+# Governed ML Operationalization Enablement
 
 Governed operationalization of AI models is a framework that uses process, people, and technology that helps in ensuring the trustworthiness of AI solutions used for business. The approach uses data and AI technologies that are integrated with an open and diverse ecosystem and is rooted in principles of trustworthy AI ethics. Governed operationalization of AI models encompasses the entire lifecycle of ML Models, starting from inception to decommission. The diagram below captures the process and people aspects of the same.
 
@@ -6,7 +6,7 @@ Governed operationalization of AI models is a framework that uses process, peopl
 
 For more detailed on Governed operationalization of AI models please refer to https://opendatascience.com/trustworthy-ai-operationalizing-ai-models-with-governance-part-1/.
 
-The Lab in this github repository takes you through End-to-End Governed ML Operationalization for a given use case in Heterogeneous platforms. In this Lab, we will be demonstrating the end to end pipeline creation using Airline Delay Dataset. The stages of the Governed ML Ops those are covered in this lab include:
+The Enablement materials in this github repository takes you through End-to-End Governed ML Operationalization for a given use case in Heterogeneous platforms. In this Lab, we will be demonstrating the end to end pipeline creation using Airline Delay Dataset. The stages of the Governed ML Ops those are covered in this lab include:
 
 1. Model Governance Workflow Initiation
 2. Model Candidacy Validation
@@ -46,14 +46,12 @@ In this course, we showcase the machine learning operationalization (MLOps) work
 <br>
 
 <br>
-### Details of Governed MLOps flow
+### Details of Governed MLOps lifecycle workflow
 
 In this Lab, you will run through the following modules in order to execute Governed MlOps flow. The various phases and the steps of Goverened ModelOps flow are depicted in the diagram below.
 
 
 ![](Images/Model_Governance_Workflow.png)
-
-<img align="left" width="100" height="100" src="Images/Model_Governance_Workflow.png">
 
 
 The notebooks in the various section of this ReadMe contain instructions for executing the steps in the Governed MLOps flow. 
@@ -61,13 +59,25 @@ The notebooks in the various section of this ReadMe contain instructions for exe
 <br>
 <br>
 
-The following spreadsheet contains the information for each group pertaining to their respective projects and resources: [Groups-Information](./University_Course_Spreadsheet.xlsx)
  
  <br>
 
-### Model Governance Workflow Initiation<a class="anchor" id="Model-Governance-Workflow-Initiation">
+## Part 1 : Governed Operationalization of Models developed in deployed in IBM Platform
 
-1. This module covers Governance Workflow Initiation in <i>IBM OpenPages with Watson</i>. The Workflow feature of IBM Openpages is used for Model Governance Lifecycle for Risk and Compliance.
+In this part of the Enabement you shall learn how to Operationalize Models developed and deployed in IBM Platform. This part has various modules which which will take your through various stages of model lifecycle workflow for Governed Model Operationalization.
+
+Please note following key aspects of this part -
+
+1. In this part, each Person will execute every step of the model lifecycle Workflow shown above by changing the Roles.
+2. Each person needs to have 1 Dataset, 1 Catalog, 2 Projects and 2 Deployment Spaces. Catalog, and Deployment Sapces are precreated for each Person in IBM tool. However, you have to create 2 Projects (instruction provided) as you go.
+
+<br><br>
+
+---------
+
+#### Part 1 - Module 1 : Model Governance Workflow Initiation<a class="anchor" id="Model-Governance-Workflow-Initiation">
+
+This module covers Governance Workflow Initiation in <i>IBM OpenPages with Watson</i>. The Workflow feature of IBM Openpages is used for Model Governance Lifecycle for Risk and Compliance.
 <br>
   
    <i> Role </i>: This step needs to be executed by `ModelOwner`
@@ -80,9 +90,9 @@ The following spreadsheet contains the information for each group pertaining to 
 
 ---------
 
-### Model Candidacy Validation<a class="anchor" id="Model-Candidacy-Validation">
+#### Part 1 - Module 2 : Model Candidacy Validation<a class="anchor" id="Model-Candidacy-Validation">
 
-2. This module of the workflow captures the Model details as part of Model Governance Workflow using IBM Openpages. 
+This module of the workflow captures the Model details as part of Model Governance Workflow using IBM Openpages. 
 <br>
    
    <i> Role </i>: This step needs to be executed by `ModelApprover`. 
@@ -95,9 +105,11 @@ The following spreadsheet contains the information for each group pertaining to 
 
 ---------
 
-### Data Sourcing/Data Acquisition<a class="anchor" id="Data-Acquisition">
+#### Part 1 - Module 3 : Data Sourcing/Data Acquisition<a class="anchor" id="Data-Acquisition">
 
-3.a This module provides the steps where a data engineer can source the data needed to develop a model. 
+This module provides the steps where a data engineer can source the data needed to develop a model.
+
+3.a In this substep of this module Data Enginner needs to review the information that is needed for Data Sourcing
 <br>
 
    <i> Role </i>: This step needs to be executed by `ModelDataEngineer`. 
@@ -106,7 +118,9 @@ The following spreadsheet contains the information for each group pertaining to 
    - Review the necessary information (Model Details, Model Catalog, Details about Data Source etc.) needed for data sourcing. This is for Reviewing or Information purposes only. No action needs to be taken in Openpages yet. 
 
 
-3.b In this sub-step, we create a joined virtualized view of the raw dataset by navigating back to home page URL of the Cloud Pak For Data. The Virtualized Dataset will then be added to your respective catalog and profiled. 
+3.b In this sub-step, the Data Engineer creates a joined virtualized view of the raw dataset by navigating back to home page URL of the Cloud Pak For Data. The Virtualized Dataset will then be added to your respective catalog and profiled. 
+
+  <i> Role </i>: This step needs to be executed by `ModelDataEngineer`.
 
 ```
 Note: The datasets are pre-loaded in DB2 and Postgres. 
@@ -118,8 +132,10 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    - Instructions are provided in the notebook: [Data Acquistion](./Data_Virtualization/Data%20Virtualization%20(Postgres%20%2B%20DB2).ipynb)
    
 <br>
+
 3.c In this sub-step, the relevant information about data sourcing is updated in model workflow.
 <br>
+   
    <i> Role </i>: This step needs to be executed by `ModelDataEngineer`
 
    - 3.c.1. Log into Openpages as ModelDataEngineer, navigate to the tasks section and click on your model name obtained from Model Governance Initiation module.
@@ -145,10 +161,11 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 ---------
 
-### Model Development<a class="anchor" id="Model-Development">
+#### Part 1 - Module 4 : Model Development<a class="anchor" id="Model-Development">
 
-4.a. This module provides the steps where a data scientist will develop a model. In Model Development step, the developer or data scientist will be creating the `development` project. 
+This module provides the steps where a data scientist will develop a model. In Model Development step, the developer or data scientist will be creating the `development` project. 
 
+4.a. In this substep of this module Model Developer needs to review the information that is needed for Model Development
 <br>
 
    <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
@@ -159,18 +176,31 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
 
 4.b. Inspect the respective Project located in Cloud Pak For Data to be used for Model Development.
+<br>
+
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
+  
   - Each User will create a new Development project `Airline-MLOps-Dev-User-Name` where User-name is allocated to you (eg. Airline-MLOps-Development-Cluster1-User10). You will use this project on Cloud Pak for Data to be used during model development phase. Go to "Cloud Pak for Data" Home Page, login with your credentials.  
   - After logging in, click on `Hamburger` icon on the top left, scroll down to projects tab and click on All Projects. Then, click on new project, provide your project name and import the `dev` zip file provided to you at the time of project creation.
 
 <br>
 
 4.c. This step involves adding the virtualized dataset to your respective project. 
+<br>
+
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`.    
+   
    - Instructions are provided in the notebook: [Data Catalog to Project](./Data_Catalog_Project/Loading%20Data%20from%20WKC%20to%20Project.ipynb)
   
 <br>
 
 
 4.d. This step converts the Training Dataset that you added to the project to csv file which will eventually be used for Model Development. 
+<br>
+
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`.   
+   
+   
    - Instructions are provided in the `Feature Transformation` notebook named `Virtualization Data Format Conversion` pre-loaded in your development project after importing the zip file. 
    - This step is typically needed for some additional feature engineering during the model development phase. In this lab, we are not doing any additional feature engineering for simplicity.
 
@@ -181,6 +211,9 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 <br>
 
 4.e. Model Development - In this sub-step, we will execute approaches for Model development using IBM Environment on Cloud Pak For Data:
+<br>
+
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
 
    - 4.e.1 Model Development using UI based approach:
       - 4.e.1.1. Instructions for performing Model Development using UI Based approach (AutoAI) : [Model Development Using AutoAI](./Model_Development/Model_Development_AutoAI/Model_Development_AutoAI.ipynb)
@@ -199,6 +232,10 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 4.f. Create and Store Necessary Artifacts for Model Validation/Monitoring in IBM Platform:
 <br>
 
+   <i> Role </i>: This step needs to be executed by `ModelDeveloper`. 
+
+<br>
+
 `Note: You must provide Watson OpenScale access to training data. Watson OpenScale needs access to your training data in order to generate contrastive explanations, display training data statistics and to create and calibrate drift detection. The Drift monitor uses training data to create and calibrate drift detection.`
 
 
@@ -212,8 +249,8 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
       -  Next, publish the `Drift_Model.tar.gz` file that was stored your development project, into your respective model catalog, similar to how you pushed model/training data statstics file to the catalog previously. 
 
 
-4.g In this sub-step, the relevant information about Model Development is updated in model workflow.
-  <br> 
+4.g. In this sub-step, the relevant information about Model Development is updated in model workflow.
+<br> 
   
    <i> Role </i>: This step needs to be executed by `ModelDeveloper`
 
@@ -230,7 +267,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    - 4.g.3. Then, click on Save. Next, click on `Model Development Verified` by navigating to actions on top right. This will move the model to `Model Development Completed` stage.
  
 4.h. In this sub-step, the model owner needs to take the appropriate action in order to make the model ready for validation.
-  <br>
+<br>
   
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
@@ -244,10 +281,11 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 ---------
 
-### Model Validation<a class="anchor" id="Model-Validation">
+#### Part 1 - Module 5 : Model Validation<a class="anchor" id="Model-Validation">
 
+This module provides the steps where a Model Validator will perform independent validation of the model. The Model Validator will have access to the Production (or Validation, used interchangeably) project, catalog and UAT/Pre-prod Deployment Space.
 
-5.a. This module provides the steps where a Model Validator will perform independent validation of the model. The Model Validator will have access to the Production (or Validation, used interchangeably) project, catalog and UAT/Pre-prod Deployment Space. 
+5.a. In this substep of this module Model Validator needs to review the information that is needed for Model Validation 
 
 <br>
   <i> Role </i>: This step needs to be executed by `ModelValidator`. 
@@ -259,33 +297,37 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 5.b Model Validation:
 
+<br>
+
 `Note: Developer has pushed the developed model to the catalog. Validator doesn’t have access to development project. Validator has to get the model from the catalog and push the model to the validation/production project. `
 
+<br>
+  <i> Role </i>: This step needs to be executed by `ModelValidator`. 
+
+   
    - 5.b.1. In this sub-step, `CREATE` a new validation/production project named `Airline_MLOps_Prod_User-name` in IBM Cloud Pak for Data by importing the zip file provided by the instructor. The validator then pushes the model to the validation/production project. 
-     - Instructions are provided in the notebook: [Pushing Model to Validation Project](./Data_Catalog_Project/Model%20from%20Catalog%20to%20Project.ipynb)
+      - Instructions are provided in the notebook: [Pushing Model to Validation Project](./Data_Catalog_Project/Model%20from%20Catalog%20to%20Project.ipynb)
   
    - 5.b.2. In this sub-step, the validator is staging the model to UAT/Pre-prod deployment space. 
-     - Instructions are provided in the notebook: [Staging the Model in UAT/Pre-prod Deployment Space](./Model_Validation/UAT_Model_Deployment.ipynb)
+      - Instructions are provided in the notebook: [Staging the Model in UAT/Pre-prod Deployment Space](./Model_Validation/UAT_Model_Deployment.ipynb)
      
    - 5.b.3. In this sub-step, the validator smoke-tests the Model using Rest API. 
-     - Instructions are provided in the notebook named `Getting Prediction from Model using REST` is pre-loaded in the validation project. 
+      - Instructions are provided in the notebook named `Getting Prediction from Model using REST` is pre-loaded in the validation project. 
 
    - 5.b.4. Configuring Model in OpenScale for Independent Validation:    
-     - 5.b.4.1. In this sub-step, we configure the model in Watson Openscale.
+      - 5.b.4.1. In this sub-step, we configure the model in Watson Openscale.
         - Instructions are provided in the notebook: [Configuring Model in OpenScale](./Model_Validation/Configuring%20Model%20in%20OpenScale.ipynb)
 
-     - 5.b.4.2. In this sub-step, we configure the model monitors  in Watson Openscale.
+      - 5.b.4.2. In this sub-step, we configure the model monitors  in Watson Openscale.
         - Instructions are provided in the notebook: [Model Monitors configuration in Openscale](./Model_Validation/Config%20of%20Model%20Monitors%20in%20OpenScale.ipynb) 
 
-     - 5.b.4.3. In this sub-step, we evaluate the model in the staging area. 
+      - 5.b.4.3. In this sub-step, we evaluate the model in the staging area. 
         - Instructions are provided in the notebook: [Pre-prod Model Evaluation and Model Approval](./Model_Validation/Pre-Prod%20Model%20Eval%20%26%20Model%20Approval.ipynb)
   
   <br>
 
 5.c. In this sub-step, the summary information (all the detailed information is already updated in the previous step) about Model Validation is updated in model workflow.
-  <br>
-  
-    <i> Role </i>: This step needs to be executed by `ModelValidator`.
+  <br><i> Role </i>: This step needs to be executed by `ModelValidator`. <br>
 
    - 5.c.1. Log into Openpages as ModelValidator, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
@@ -310,11 +352,11 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 ---------
 
-### Model Deployment<a class="anchor" id="Model-Deployment">
+#### Part 1 - Module 6 : Model Deployment<a class="anchor" id="Model-Deployment">
 
-##### Model Deployment in IBM Environment
+This module provides the steps where a Model Deployer will perform independent validation of the model.
 
-6.a. This module provides the steps where a Model Deployer will perform independent validation of the model.
+6.a. In this substep of this module Model Deployer needs to review the information that is needed for Model Deployment
 <br> <i> Role </i>: This step needs to be executed by `ModelDeployer`. 
 
    - Log into OpenPages as Model Deployer. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
@@ -326,18 +368,22 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 
 6.b. Model Deployment in Production Environment:
 
+<br> 
+<i> Role </i>: This step needs to be executed by `ModelDeployer`. <br>
+
+   
    - 6.b.1. In this sub-step, we are pushing the model in production using using CI/CD approach.
-      - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
-      - This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
+        - Follow the instructions in the notebook: [Notebook_Instructions](./CICD/Push%20Model%20from%20Pre-Prod%20to%20Prod%20(CICD)%20Instructions.ipynb)
+       - This consists of CICD approach for Model Deployment from Pre-prod to Production Environment using Code-based approach.
      
 
    - 6.b.2. In this sub-step, we are pushing AutoAI model in Production using UI based Approach.
-      - Instructions are provided in the notebook: [Model Deployment and Configuration for Monitoring](./Model_Deployment_Monitoring_Configuration_Production/Model%20Deployment%20%26%20Config%20for%20Monitoring.ipynb)
+        - Instructions are provided in the notebook: [Model Deployment and Configuration for Monitoring](./Model_Deployment_Monitoring_Configuration_Production/Model%20Deployment%20%26%20Config%20for%20Monitoring.ipynb)
   
  
  6.c. In this sub-step, the summary information (all the detailed information is already updated in the previous step) about Model Deployment is updated in model workflow.
-  <br>
-    <i> Role </i>: This step needs to be executed by `ModelDeployer`
+<br>
+  <i> Role </i>: This step needs to be executed by `ModelDeployer`. 
     
    - 6.c.1. Log into Openpages as ModelDeployer, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
@@ -349,7 +395,7 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
    - 6.c.3. Then, click on Save. Next, click on `Model Deployment Verified` by navigating to actions on top right. This will move the model to `Model Deployment Completed` stage.
  
 6.d. In this sub-step, the model owner needs to take the appropriate action in order to make the model ready for deployment.
-  <br>
+<br>
    <i> Role </i> This step needs to be executed by `ModelOwner`
 
    - 6.d.1. Log into Openpages as ModelOwner, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
@@ -361,17 +407,20 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ---------
 <br>
 
-### Model Productionization<a class="anchor" id="Model-Productionization">
+#### Part 1 - Module 7 : Model Productionization
 
+This module provides the steps where a Model Deployer will perform configuration for Productionization of the model.
 
-7.a. This module provides the steps where a Model Monitor will perform configuration for Productionization of the model.
+7.a. In this substep of this module Model Deployer needs to review the information that is needed for Model Productionization
 <br>
-  <i> Role </i>: This step needs to be executed by `ModelMonitor`. 
+  <i> Role </i>: This step needs to be executed by `ModelDeployer`. 
 
-   - Log into OpenPages as Model Monitor. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
+   - Log into OpenPages as Model Deployer. From the task list, select the model corresponding to the Model name as obtained from `Model Governance Initiation` Module.
    - Review the necessary information (Model Development Details, Model Catalog, Model Validation details and Model Deployment Details). 
    
 7.b. Configure Models in Production Environment:
+<br>
+  <i> Role </i>: This step needs to be executed by `ModelDeployer`. 
 
    - 7.b.1. In this sub-step, we create WML Model Wrapper Function in Production Environment. 
       - Instructions are provided in the notebook : [WML Model Wrapper Function](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(WML).ipynb)
@@ -382,9 +431,9 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
       
 7.c. In this sub-step, the summary information (all the detailed information is already updated in the previous step) about Model Productionization is updated in model workflow.
   <br>
-    <i> Role </i>: This step needs to be executed by `ModelMonitor`
+    <i> Role </i>: This step needs to be executed by `ModelDeployer`
 
-   - 7.c.1. Log into Openpages as Model Monitor, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
+   - 7.c.1. Log into Openpages as Model Deployer, navigate to the tasks section and click on the model name obtained from Model Governance Initiation module.
    
    - 7.c.2. Click on `Model Deployment` view, fill out the necessary/key fields. 
       - Wrapper Function Endpoint: Enter the Endpoint URL that you can retreieve from production deployment space.
@@ -409,85 +458,207 @@ Note: The datasets are pre-loaded in DB2 and Postgres.
 ---------
 <br>
 
-### Model Monitoring in Production Environment<a class="anchor" id="Model-Monitoring">
+#### Part 1 - Module 8 : Model Monitoring in Production Environment<a class="anchor" id="Model-Monitoring">
+
+In this substep the MOdel Deployer will send scoring requests to the Model and investigate how Model Monitoring is happening
+
+<br>
+    <i> Role </i>: This step needs to be executed by `ModelDeployer`
+<br>   
 
 `Run the notebooks below in sequence for developed Model which have been pushed to production. 
 
-   - 8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
+8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
    
-   - 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
+8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
-   - 8.c. [Investigate Monitoring Results using Watson OpenScale](./Model_Monitoring_Production/3.%20Investigate%20Monitoring%20Results%20w_OpenScale.ipynb)
+8.c. [Investigate Monitoring Results using Watson OpenScale](./Model_Monitoring_Production/3.%20Investigate%20Monitoring%20Results%20w_OpenScale.ipynb)
    
-   - 8.d. Check usability status in OpenPages - Usability Status in Openpages should change to `red` after few minutes. 
+8.d. Check usability status in OpenPages - Usability Status in Openpages should change to `red` after few minutes. 
    
    `Note: The usability status in Openpages is dependent on values received from Openscale. The value of usability status changes from Accept to Reject if any of the model monitoring metrics are below the threshold and appear as red. `
    
-  - 8.e. Test model again with new scoring request from the UI as you performed during smoke-testing in the validation phase. This time, there would be error response indicating that model execution is not allowed.
+8.e. Test model again with new scoring request from the UI as you performed during smoke-testing in the validation phase. This time, there would be error response indicating that model execution is not allowed.
 
 ---------
 <br>
 
-### Governed Operationalization of Model developed and deployed in Non-IBM Environment:
+## Part 2 : Governed Operationalization of Model developed and deployed in Non-IBM Environment:
 
-#### REPEAT STEPS 1-3 from above involving Data Sourcing and Virtualization, following the same sequence. 
+In this part of the Enabement you shall learn how to Operationalize Models developed and deployed in NON-IBM Platform. 
 
-#### Model Development outside IBM Environment:
+In this part you shall execute a project as a group where you shall execute various stages of the model lifecycle workflow for Governed Model Operationalization.
 
-  - 4.a. Model Development outside IBM environment(3rd party Environment) - Instructions are provided in the notebook named `Airline Model development Heroku` pre-loaded in the development project. 
+Please note following key aspects of this Project -
+
+1. Each group would be executing 1 end to end model lifecycle workflow.
+2. Each person in the group select one (or 2) Roles to perform. The Roles you would need to select from are - Model Owner, Model Approver, Model Data Engineer, Model Developer, Model Validator, Model Deployer, and Model Monitor.
+3. In this part, each Person will execute each step of the model lifecycle Workflow (shown above by changing the Roles) based on the Role he/she has selected.
+4. For the entire group there would 1 Dataset, 1 Catalog, 2 Projects and 2 Deployment Spaces to be used. Catalog, and Deployment Sapces are precreated for each Person in IBM tool. However, you have to create the Dataset and the 2 Projects (instruction provided) as you go.
+
+<br><br>
+
+---------
+
+#### Part 2 - Module 1 : Model Lifecycle Workflow Initiation
+
+Repeat the exact same steps for this Module as in Part 1. Create a new Catalog for your group. Add all your group memebers to the Catalog with Editor profile.
+
+This time this module should be executed by the appropriate person(s) from the group who plays the respective Role(s) applicable for this Module
+
+---------
+
+#### Part 2 - Module 2 : Model Candidacy Validation
+
+Repeat the exact same steps for this Module as in Part 1. \
+
+This time this module should be executed by the appropriate person(s) from the group who plays the respective Role(s) applicable for this Module
+
+---------
+
+#### Part 2 - Module 3 : Data Sourcing/Data Acquisition
+
+Repeat the exact same steps for this Module as in Part 1. 
+
+This time this module should be executed by the appropriate person(s) from the group who plays the respective Role(s) applicable for this Module. The Data Engineer can use the same Dataset that he/she used for Part 1.
+
+---------
+
+#### Part 2 - Module 4 : Model Development (outside IBM Environment)
+
+In this step Model Developer will develop the model outside IBM Platform.
+
+<br>
+  <i> Role </i>: The following steps need to be executed by `ModelDeveloper`. 
+<br>
+
+4.a. Follow the same instruction for this substep as in Part 1.
+
+4.b. Create a group level Development Project for your group. Add other group members (Data Engineer, Model Owner) to the project.
+
+4.c. Follow the same instruction for this substep as in Part 1. Use the group level Catalog, the group level Dataset and the group level Development Project.
+
+4.d. Follow the same instruction for this substep as in Part 1.
+
+4.e. Model Development outside IBM environment(3rd party Environment) - Instructions are provided in the notebook named `Airline Model development Heroku` pre-loaded in the development project. You can downlod the csv file that you created in previous step to your platform/machine to build the model. After the Model is developed you can upload the pkl file to the Development Project. Then move this pkl file to the group level Catalog.
      - `Note: In case you want to skip this step, the model pkl file will be provided to you through your respective catalog. Simply push the model file from the catalog to your project.`
-  - 4.b. Store the model to the catalog in `Model Store` - [Publish Model to Catalog](./Model_Development/Model_Store) - This will store the respective model to the catalog.
+
+4.f. Create and Store Necessary Artifacts for Model Validation/Monitoring in the Catalog. You can use the same artifacts those you created in Part 1.
+
+4.g. Follow the same instruction for this substep as in Part 1.
+    
+<br>
+  <i> Role </i>: The following step needs to be executed by `ModelOwner`. 
+ 
+<br>
+4.f. Follow the same instruction for this substep as in Part 1.
+
+---------
+
+#### Part 2 - Module 5 : Model Validation
+
+In this part we will be skipping actual Model Validation step due to limited time. Follow the instructions beloe for the same.
 
 <br>
-      
-      
-  - 4.c. Reuse the following Artifacts for Model Validation/Monitoring that were created in IBM Platform as highlighted below: 
-    - 4.c.1 Instructions are provided in the notebook named `Create training data Statistics JSON` pre-loaded in your development project. 
-       
-    - 4.c.2. Instructions are provided in the notebook named `Create Drift Detection Model` pre-loaded in your development project.
+  <i> Role </i>: The following steps need to be executed by `ModelValidator`. 
+<br>
+
+5.a. Review the same substep in Part 1. However, skip executing this step for this part.
+
+5.b. Review the same substep in Part 1. However, skip executing this step for this part.
+
+5.c. Execute the instructions for the same substep in Part 1. You can use the same Validation Dataset name and Report as in Part 1.
+
+<br>
+  <i> Role </i>: The following step needs to be executed by `ModelOwner`. 
+<br><br>
+5.d. Execute the instructions for the same substep in Part 1.
+
+
+---------
+
+#### Part 2 - Module 6 : Model Deployment
+
+In this step, we deploy the developed model using Heroku Platform(3rd party Environment). 
+
+<br>
+  <i> Role </i>: The following steps need to be executed by `ModelDeployer`. 
+<br>
+
+6.a. Follow the instructions as in Part 1 for this substep.
+
+6.b. Follow the instructions are provided in the notebook named `Deploy model to Heroku` pre-loaded in your validation/production project. 
+
+6.c. Execute the instructions for the same substep in Part 1. You can use -
     
----------
+    Endpoint: Enter the Endpoint URL that you got after deploying the Model in Heroku.
+    Deployment Platform: Enter the deployment platform as Heroku (or Data Robot - as we mimic Data Robot signture) from the drop down menu.
+    Model Deployment Space: Enter the model deployment space for the Wrapper function for the model deployed in Heroku.
 
-### Model Validation
+<br>
+  <i> Role </i>: The following step needs to be executed by `ModelOwner`. 
+<br><br>
 
-5. In this lab, we will be skipping Model Validation step due to limited time.
+6.d. Execute the instructions for the same substep in Part 1.
 
----------
-### Model Deployment
-
-  #### Model Deployment using Heroku Platform:
-6. In this step, we deploy the developed model using Heroku Platform(3rd party Environment). Instructions are provided in the notebook named `Deploy model to Heroku` pre-loaded in your validation/production project. 
   
 ---------
 
-### Model Productionization:
+#### Part 2 - Module 7 : Model Productionization
 
-7. Configure Models in Production Environment:
-  - 7.a. Model Wrapper Function and Deployment in Production Environment.   [Model Wrapper Function in Heroku Instructions](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(Heroku).ipynb)
+This module provides the steps where a Model Deployer will perform configuration for Productionization of the model.
+
+<br>
+  <i> Role </i>: The following steps need to be executed by `ModelDeployer`. 
+<br>
+
+7.a. Follow the instructions as in Part 1 for this substep.
+
+7.b. Configure Models in Production Environment:
+  - 7.b.1. In this step you create Wrapper Function in Production deployment space of IBM platform for the Model deployed in Heroku. Follow the steps provided in this Notebook -  [Model Wrapper Function in Heroku Instructions](./Model_Deployment_Monitoring_Configuration_Production/Create%20Wrapper%20Function%20Instructions%20(Heroku).ipynb)
  
-  - 7.b. In this sub-step, we configure model for monitoring in production. 
+  - 7.b.2. In this sub-step, you configure model (the Wrapper Function) for monitoring in production. 
      - Instructions are provided in the notebook named `Configure Openscale via API Instructions`pre-loaded in your validation/production project. 
+     
+7.c. Follow the instructions as in Part 1 for this substep.  Use follwoing -
+
+    Wrapper Function Endpoint: Enter the Endpoint URL that you can retreieve from production deployment space.
+    Wrapper Function Name: Enter the wrapper function name you retrieve from production deployment space.
+    Model Monitoring URL: Enter the model monitoring subscription URL (which is the browser URL of the monitoring tile for the wrapper function in Openscale).
+
+<br>
+  <i> Role </i>: The following step needs to be executed by `ModelOwner`. 
+<br><br>
+
+7.d. Execute the instructions for the same substep in Part 1.
 
 ---------
 
 
-### Model Monitoring in Production Environment:
-`Run the notebooks below in sequence for the Model which have been pushed to production.`
+#### Part 2 - Module 8 : Model Monitoring in Production Environment
 
-  - 8.a. Sending Scoring requests in Production Environment: 
+In this substep the Model Deployer will send scoring requests to the Model and investigate how Model Monitoring is happening
+
+<br>
+  <i> Role </i>: The following steps need to be executed by `ModelDeployer`. 
+<br>
+
+`Run the notebooks below in sequence for developed Model which have been pushed to production. 
+
+8.a. Sending Scoring requests in Production Environment: 
     - 8.a.1. Instructions are provided in the notebook named `Send Scoring Requests from Virtualized Data` pre-loaded in your validation/production project. 
     
     - 8.a.2. (Optional) Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project which is sending random scoring requests to the productionized model. 
    
-  - 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
+8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
-  - 8.c. [Investigate Monitoring Results using Watson OpenScale](./Model_Monitoring_Production/3.%20Investigate%20Monitoring%20Results%20w_OpenScale.ipynb)
+8.c. [Investigate Monitoring Results using Watson OpenScale](./Model_Monitoring_Production/3.%20Investigate%20Monitoring%20Results%20w_OpenScale.ipynb)
 
-  - 8.d. Check usability status in OpenPages - Usability Status in Openpages should change to `red` after few minutes. 
+8.d. Check usability status in OpenPages - Usability Status in Openpages should change to `red` after few minutes. 
    
 `Note: The usability status in Openpages is dependent on values received from Openscale. The value of usability status changes from Accept to Reject if any of the model monitoring metrics are below the threshold and appear as red. `
    
-  - 8.e. Test model again with new scoring request from the UI as you performed during smoke-testing in the validation phase. This time, there would be error response indicating that model execution is not allowed.
+8.e. Test model again with new scoring request from the UI as you performed during smoke-testing in the validation phase. This time, there would be error response indicating that model execution is not allowed.
 
 ---------
 <br>
