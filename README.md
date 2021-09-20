@@ -275,7 +275,7 @@ This module provides the steps where a data scientist will develop a model. In M
    
    - 4.h.2. Model Owner verifies the Model development details (Model Experiment File, Model Quality, Training Data Statistics File and Drift Detection Model file) by investigating the corresponding assets in the catalog.
    
-   - 4.h.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Development Completed` to `Approved for Validation` and clicks on Save. Then, Model Owner navigates to `Model Validation` view and updated the `Have you moved the model from Dev to test` to `Yes`. Then, Model owner clicks on actions on top right to `Model Validation` indicating the model is Ready for Validation stage. This will move the model to `Approved for Validation` stage.
+   - 4.h.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Development Completed` to `Approved for Validation` and clicks on Save. Then, Model owner clicks on actions on top right to `Model Validation` indicating the model is Ready for Validation stage. This will move the model to `Approved for Validation` stage.
 
 <br>
 
@@ -402,7 +402,7 @@ This module provides the steps where a Model Deployer will perform independent v
    
    - 6.d.2. Model Owner verifies the Model Deployment details by reviewing the Model Deployment endpoint.
    
-   - 6.d.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Deployment Completed` to `Approved for Productionization`. Model Owner also updates the field : `Have u moved the model from test to production infrastructure` as YES and then clicks on Save. Then, Model owner clicks on actions on top right to `Productionize Model` indicating the model is Ready for Productionization. This will move the model to `Approved for Productionization` stage.
+   - 6.d.3. The Model Owner then updates the `Model Life Cycle Stage` from `Model Deployment Completed` to `Approved for Productionization`. Model Owner then clicks on Save. Then, Model owner clicks on actions on top right to `Productionize Model` indicating the model is Ready for Productionization. This will move the model to `Approved for Productionization` stage.
 
 ---------
 <br>
@@ -534,7 +534,7 @@ In this step Model Developer will develop the model outside IBM Platform.
 
 4.a. Follow the same instruction for this substep as in Part 1.
 
-4.b. Create a group level Development Project for your group. Add other group members (Data Engineer, Model Owner) to the project.
+4.b. Create a group level Development Project for your group. Use the same zip file that you have used for creating the development project in Part 1. Add other group members (Data Engineer, Model Owner) to the project.
 
 4.c. Follow the same instruction for this substep as in Part 1. Use the group level Catalog, the group level Dataset and the group level Development Project.
 
@@ -565,7 +565,7 @@ In this part we will be skipping actual Model Validation step due to limited tim
 
 5.a. Review the same substep in Part 1. However, skip executing this step for this part.
 
-5.b. Review the same substep in Part 1. However, skip executing this step for this part.
+5.b. Create a new group level Operationalization project by using the same zip file that you have used in Part 1 in this substep. Add other group members (Data Engineer, Model Owner, Model Deployer, Data Scientist) to the project.
 
 5.c. Execute the instructions for the same substep in Part 1. You can use the same Validation Dataset name and Report as in Part 1.
 
