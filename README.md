@@ -468,7 +468,7 @@ In this substep the MOdel Deployer will send scoring requests to the Model and i
 
 `Run the notebooks below in sequence for developed Model which have been pushed to production. 
 
-8.a. Instructions are provided in the notebook named `Sending Mult. Scoring Req. to Deployment` pre-loaded in your validation/production project. 
+8.a. Instructions are provided in the notebook named `Send Scoring Requests from Virtualized Data` pre-loaded in your validation/production project. 
    
 8.b. [Model Monitoring in Production Environment](./Model_Monitoring_Production/2.%20Model%20Monitoring%20in%20Production%20Env..ipynb)
    
